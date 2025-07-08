@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
 export default function useKeyPress(key) {
-    const [isEnterPressed, setIsEnterPressed] = useState(false);
+    const [isPressed, setIsPressed] = useState(false);
     useEffect(() => {
         const checkKeyPress = (e) => {
             if (e.code !== key) return;
             if (e.type === 'keydown') {
-                setIsEnterPressed(true);
+                setIsPressed(true);
             }
             if (e.type === 'keyup') {
-                setIsEnterPressed(false);
+                setIsressed(false);
             }
         };
         window.addEventListener('keydown', checkKeyPress);
@@ -20,5 +20,5 @@ export default function useKeyPress(key) {
         };
     }, []);
 
-    return [key, isEnterPressed];
+    return [key, isPressed];
 }

@@ -52,12 +52,12 @@
 import useKeyPress from "./hooks/useKeyPress";
 
 function App() {
-  const [key, isEnterPressed] = useKeyPress("Enter");
+  const [key, isPressed] = useKeyPress("Enter");
 
   return (
     <div>
       <h1>Tieni premuto "{key}" per testare il custom hook</h1>
-      <p>{isEnterPressed ? `${key} premuto! ✅` : "Aspettando input... ⌨️"}</p>
+      <p>{isPressed ? `${key} premuto! ✅` : "Aspettando input... ⌨️"}</p>
     </div>
   );
 }
