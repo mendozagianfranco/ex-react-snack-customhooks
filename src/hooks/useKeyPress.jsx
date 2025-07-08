@@ -9,7 +9,7 @@ export default function useKeyPress(key) {
                 setIsPressed(true);
             }
             if (e.type === 'keyup') {
-                setIsressed(false);
+                setIsPressed(false);
             }
         };
         window.addEventListener('keydown', checkKeyPress);
