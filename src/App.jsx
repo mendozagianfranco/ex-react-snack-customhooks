@@ -33,16 +33,31 @@
 // export default App;
 
 // Snack 3
+// import useCustomPointer from "./hooks/useCustomPointer";
 
-import useCustomPointer from "./hooks/useCustomPointer";
+// function App() {
+//   const customPointer = useCustomPointer("🔥");
+
+//   return (
+//     <div>
+//       <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
+//       {customPointer}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// Snack BONUS
+import useKeyPress from "./hooks/useKeyPress";
 
 function App() {
-  const customPointer = useCustomPointer("🔥");
+  const [key, isEnterPressed] = useKeyPress("Enter");
 
   return (
     <div>
-      <h1>Sposta il mouse per vedere il cursore personalizzato!</h1>
-      {customPointer}
+      <h1>Tieni premuto "{key}" per testare il custom hook</h1>
+      <p>{isEnterPressed ? `${key} premuto! ✅` : "Aspettando input... ⌨️"}</p>
     </div>
   );
 }
